@@ -20,11 +20,15 @@ config_schema:
   - ["pins", "o", {title: "Pin configuration"}]
   - ["pins.sw", "i", 5, {title: "SW input pin, active low"}]
   - ["pins.relay", "i", 4, {title: "Relay control pin, active high"}]
-#  - ["debug.level", 3]
+
+  # Enable mDNS discovery and resolving
+  - ["dns_sd.enable", true]
+  - ["dns_sd.host_name", "shelly1-??????"]
 
 libs:
   - origin: https://github.com/mongoose-os-libs/mjs
   - origin: https://github.com/mongoose-os-libs/sntp
+  - origin: https://github.com/mongoose-os-libs/dns-sd
   - origin: https://github.com/mongoose-os-libs/http-server
   - origin: https://github.com/mongoose-os-libs/ota-http-server
   - origin: https://github.com/mongoose-os-libs/ca-bundle
