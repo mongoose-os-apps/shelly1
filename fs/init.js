@@ -46,12 +46,12 @@ MQTT.sub(sub_topic, function(conn, topic, msg) {
   publishState();
 }, null);
 
-// Publish our status 
+// Publish our status
 MQTT.setEventHandler(function(conn, ev, edata) {
   if (ev === MQTT.EV_CONNACK) {
     publishState();
   }
-});
+}, null);
 
 // Monitor network connectivity.
 Event.addGroupHandler(Net.EVENT_GRP, function(ev, evdata, arg) {
